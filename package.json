@@ -4,21 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf build/*",
     "prepublish": "typings install",
-    "watch": "webpack --watch",
-    "serve": "webpack-dev-server --hot --inline --zno-info --zopen --colors --content-base ./src",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "build:static": "cpy src/index.html build",
+    "build:src": "webpack -p",
+    "watch": "webpack --watch --colors",
+    "serve": "lite-server",
+    "dev": "npm-run-all clean build:static -p watch serve"
   },
   "keywords": [],
   "author": "@SteveALee",
   "license": "MIT",
   "devDependencies": {
+    "@cycle/dom": "^14.3.0",
+    "@cycle/xstream-run": "^4.2.0",
+    "@types/core-js": "^0.9.35",
+    "cpy-cli": "^1.0.1",
+    "lite-server": "^2.2.2",
+    "npm-run-all": "^4.0.0",
+    "rimraf": "^2.5.4",
     "ts-loader": "^2.0.0",
     "tslint": "^4.4.2",
     "tslint-microsoft-contrib": "^4.0.0",
     "typescript": "^2.1.5",
     "typings": "^2.1.0",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.16.3"
+    "xstream": "^10.1.0"
   }
 }

@@ -1,8 +1,21 @@
+import xs from 'xstream'
 
-// tslint:disable-next-line:no-console
-console.log('hhh')
+import {run} from '@cycle/xstream-run'
 
-// tslint:disable-next-line:no-relative-imports
-import { view } from './mycrazyview'
+import {h1, makeDOMDriver} from '@cycle/dom'
 
-view('1234')
+function main() {
+  const sinks = {
+    DOM: xs.periodic(1000).map(i =>
+      h1('' + i + ' seconds elapsed')
+    )
+  }
+  return sinks
+}
+
+const drivers = {
+  DOM: makeDOMDriver('#app')
+}
+
+run(main, drivers)
+

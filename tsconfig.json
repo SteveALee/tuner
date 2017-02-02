@@ -8,7 +8,6 @@
         "inlineSources": true,
         "declaration":true,
         "newLine": "LF",
-        "outDir": "./public",
         "noImplicitAny": true,
         "strictNullChecks": true,
         "noFallthroughCasesInSwitch": true,
@@ -19,8 +18,8 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true
     },
-    "include": [
-        "src/**/*"
+    "files": [
+        "src/app/app.ts"
     ],
     "exclude": [
         "node_modules"

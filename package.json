@@ -8,10 +8,11 @@
     "prepublish": "typings install",
     "lint": "tslint --project .",
     "build:static": "cpy src/index.html build",
-    "build:src": "webpack -p",
+    "build:src": "webpack",
+    "build": "npm run build:static && npm run build:src",
     "watch": "webpack --watch --colors",
     "serve": "lite-server",
-    "dev": "npm-run-all clean build:static -p watch serve"
+    "dev": "npm-run-all clean build -p watch serve"
   },
   "keywords": [],
   "author": "@SteveALee",

@@ -1,0 +1,24 @@
+{
+  "name": "tuner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "typings install",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server --hot --inline --zno-info --zopen --colors --content-base ./src",
+    "lint": "tslint --project ."
+  },
+  "keywords": [],
+  "author": "@SteveALee",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^2.0.0",
+    "tslint": "^4.4.2",
+    "tslint-microsoft-contrib": "^4.0.0",
+    "typescript": "^2.1.5",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^1.16.3"
+  }
+}

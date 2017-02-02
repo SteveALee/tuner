@@ -1,0 +1,12 @@
+{
+    "rulesDirectory": ["node_modules/tslint-microsoft-contrib/"],
+    "extends": "./recommended_ruleset.js",
+    "rules": {
+        "interface-name": [true, "never-prefix"],
+        "semicolon": [true, "never"],
+        "linebreak-style": [true, "LF"],
+        "quotemark": [true, "single", "avoid-escape"],
+        "missing-jsdoc": false,
+        "no-for-in-array":false
+    }
+}

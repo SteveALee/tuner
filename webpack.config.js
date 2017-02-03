@@ -4,19 +4,19 @@ module.exports = {
   entry: {
     app: './src/app/app.ts',
   },
-  output: {
-      path: path.resolve(__dirname, 'build/js'),
+  output:{
+      path: __dirname + '/build/js',
       filename: '[name].js',
       publicPath: '/js/'
   },
+  devtool: "source-map",
   resolve: {
-      extensions: ['.ts', '.js']
+      extensions: ['\*', '.ts', '.js']
   },
   module: {
-      loaders: [
-          // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-          { test: /\.tsx?$/, loader: 'ts-loader' }
+      rules: [
+          { test: /\.ts$/, use: 'awesome-typescript-loader' },
+          { test: /\.js$/, use: "source-map-loader", enforce: "pre" }
       ]
-  },
-  devtool: "inline-source-map"
+  }
 }

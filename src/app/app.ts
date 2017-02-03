@@ -1,8 +1,7 @@
+import {h1, makeDOMDriver} from '@cycle/dom'
+import {run} from '@cycle/xstream-run'
 import xs from 'xstream'
 
-import {run} from '@cycle/xstream-run'
-
-import {h1, makeDOMDriver} from '@cycle/dom'
 
 function main() {
   const sinks = {
